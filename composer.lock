@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1f49b9b71c580be458d93c36d85fb099",
+    "hash": "adba4b2df4caa66715b438ea1fc90101",
     "packages": [
         {
             "name": "objective-php/phpunit-extension",
@@ -1068,7 +1068,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0"
+        "php": ">=5.5.0"
     },
     "platform-dev": []
 }
