@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c54f43677effc632832a91ea8fb411bc",
+    "hash": "19e223ba8eed496d11127b14becb00bc",
     "packages": [
         {
             "name": "objective-php/phpunit-extension",
@@ -53,16 +53,16 @@
         },
         {
             "name": "objective-php/primitives",
-            "version": "v1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/primitives.git",
-                "reference": "eda7e71c9e0cbd0dfff30ec5841170da73168774"
+                "reference": "3b892a56226479c93b597d01b15f599f42ad9470"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/eda7e71c9e0cbd0dfff30ec5841170da73168774",
-                "reference": "eda7e71c9e0cbd0dfff30ec5841170da73168774",
+                "url": "https://api.github.com/repos/objective-php/primitives/zipball/3b892a56226479c93b597d01b15f599f42ad9470",
+                "reference": "3b892a56226479c93b597d01b15f599f42ad9470",
                 "shasum": ""
             },
             "require": {
@@ -74,8 +74,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "ObjectivePHP\\Primitives": "src/"
+                "psr-4": {
+                    "ObjectivePHP\\Primitives\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -100,7 +100,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-05-18 14:35:00"
+            "time": "2015-05-19 18:09:35"
         }
     ],
     "packages-dev": [
@@ -1064,7 +1064,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "objective-php/primitives": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
