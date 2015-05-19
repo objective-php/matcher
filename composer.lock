@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "adba4b2df4caa66715b438ea1fc90101",
+    "hash": "c54f43677effc632832a91ea8fb411bc",
     "packages": [
         {
             "name": "objective-php/phpunit-extension",
@@ -53,16 +53,16 @@
         },
         {
             "name": "objective-php/primitives",
-            "version": "v1.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/primitives.git",
-                "reference": "2d7d33dca0a30c2f361f1c8845296da8d5b93196"
+                "reference": "eda7e71c9e0cbd0dfff30ec5841170da73168774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/2d7d33dca0a30c2f361f1c8845296da8d5b93196",
-                "reference": "2d7d33dca0a30c2f361f1c8845296da8d5b93196",
+                "url": "https://api.github.com/repos/objective-php/primitives/zipball/eda7e71c9e0cbd0dfff30ec5841170da73168774",
+                "reference": "eda7e71c9e0cbd0dfff30ec5841170da73168774",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-05-18 09:01:58"
+            "time": "2015-05-18 14:35:00"
         }
     ],
     "packages-dev": [
