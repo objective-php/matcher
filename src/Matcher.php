@@ -229,7 +229,7 @@
          *
          * @return bool
          */
-        protected function containsWildcard($string)
+        public function containsWildcard($string)
         {
             if (strstr($string, '*'))
             {
