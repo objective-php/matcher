@@ -216,10 +216,7 @@
                 }
             }
 
-            // @codeCoverageIgnoreStart
-            // this should never happen!
-            throw new Exception('Unresolved - cannot say whether filter matched reference or not');
-            // @codeCoverageIgnoreEnd
+            return false;
         }
 
         /**
