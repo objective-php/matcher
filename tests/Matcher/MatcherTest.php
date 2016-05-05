@@ -30,8 +30,8 @@ class MatcherTest extends TestCase
     public function testAlternateSeparator()
     {
         $matcher = new Matcher;
-        $matcher->separator('\\');
-        $this->assertEquals('\\', $matcher->separator());
+        $matcher->setSeparator('\\');
+        $this->assertEquals('\\', $matcher->getSeparator());
         $this->assertTrue($matcher->match('*\event\test', 'namespace\event\test'));
     }
 
@@ -68,6 +68,7 @@ class MatcherTest extends TestCase
             ['multiple.reference', ['multiple', 'reference']],
             ['*', 'reference'],
             ['reference', '*'],
+            ['.reference', 'reference'],
             ['*.event', 'event.test.*'],
             ['*.event', 'name.space.event'],
             ['*.event', '*.event'],
@@ -96,6 +97,10 @@ class MatcherTest extends TestCase
             ['services.*.error', 'services.x.error'],
             ['services.*.error', 'services.x.y.error'],
             ['services.*.error', 'services.[x|y].error'],
+            ['!service', 'not-service'],
+            ['service', '!not-service'],
+            ['service', '![x|y]'],
+            ['.', '.'],
 
         ];
     }
@@ -115,6 +120,9 @@ class MatcherTest extends TestCase
            ['services.*.error', 'services.something.something-else'],
            ['services.*.any', 'services.*.something-else'],
            ['services.something.something-else', 'services.*.error'],
+           ['!service', '!not-service'],
+           ['service', '![x|y|service]'],
+           ['service.any', '![x|y|service].*'],
        ];
     }
 }
