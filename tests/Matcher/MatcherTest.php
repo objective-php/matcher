@@ -30,8 +30,8 @@ class MatcherTest extends TestCase
     public function testAlternateSeparator()
     {
         $matcher = new Matcher;
-        $matcher->separator('\\');
-        $this->assertEquals('\\', $matcher->separator());
+        $matcher->setSeparator('\\');
+        $this->assertEquals('\\', $matcher->getSeparator());
         $this->assertTrue($matcher->match('*\event\test', 'namespace\event\test'));
     }
 
