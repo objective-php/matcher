@@ -1,12 +1,16 @@
 <?php
 namespace Tests\ObjectivePHP\Matcher;
 
+use Codeception\TestCase\Test;
 use ObjectivePHP\Matcher\Exception;
 use ObjectivePHP\Matcher\Matcher;
-use ObjectivePHP\PHPUnit\TestCase;
 
 
-class MatcherTest extends TestCase
+/**
+ * Class MatcherTest
+ * @package Tests\ObjectivePHP\Matcher
+ */
+class MatcherTest extends Test
 {
 
     /**
@@ -27,6 +31,9 @@ class MatcherTest extends TestCase
         $this->assertTrue($matcher->match($filter, $reference));
     }
 
+    /**
+     *
+     */
     public function testAlternateSeparator()
     {
         $matcher = new Matcher;
@@ -35,30 +42,61 @@ class MatcherTest extends TestCase
         $this->assertTrue($matcher->match('*\event\test', 'namespace\event\test'));
     }
 
+    /**
+     * @throws Exception
+     */
     public function testAlternativesExtractor()
     {
         $matcher = new Matcher;
         $this->assertEquals(['name', 'alternate'], $matcher->extractAlternatives('[name|alternate]'));
         $this->assertEquals(['name', 'alternate', 'last'], $matcher->extractAlternatives('[name|alternate||last]'));
 
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function testAlternativesExtractorFailsWithIncompleteSyntax()
+    {
+        $matcher = new Matcher;
+
         // missing trailing ']'
-        $this->expectsException(function() use($matcher) {
-            $matcher->extractAlternatives('[invalid|syntax');
-        }, Exception::class);
+        $this->expectException(Exception::class);
 
-        // no alternatives
-        $this->expectsException(function() use($matcher) {
-            $matcher->extractAlternatives('[]');
-        }, Exception::class);
+        $matcher->extractAlternatives('[invalid|syntax');
 
-        // no alternatives
-        $this->expectsException(function() use($matcher) {
-            $matcher->extractAlternatives('[|]');
-        }, Exception::class);
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function testAlternativesExtractorFailsWithNoAlternatives()
+    {
+        $matcher = new Matcher;
+
+        // missing trailing ']'
+        $this->expectException(Exception::class);
+
+        $matcher->extractAlternatives('[]');
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function testAlternativesExtractorFailsWithEmptyAlternatives()
+    {
+        $matcher = new Matcher;
+
+        // missing trailing ']'
+        $this->expectException(Exception::class);
+
+        $matcher->extractAlternatives('[|]');
     }
 
 
-
+    /**
+     * @return array
+     */
     public function dataProviderForTestValidMatch()
     {
         return
@@ -100,6 +138,9 @@ class MatcherTest extends TestCase
         ];
     }
 
+    /**
+     * @return array
+     */
     public function dataProviderForTestInvalidMatch()
     {
        return

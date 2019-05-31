@@ -126,7 +126,7 @@
                             {
                                 return false;
                             }
-                            continue;
+                            continue 2;
 
                         default:
                             return false;
